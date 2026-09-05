@@ -41,14 +41,16 @@ export function SiteNav() {
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.label}
+              to={l.to}
+              hash={l.hash}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
+
           <Button variant="accent" size="sm" asChild>
             <a href="#cv">Download CV</a>
           </Button>
