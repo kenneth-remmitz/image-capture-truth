@@ -1,4 +1,6 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+
 
 /** Small developer-style label, e.g. `<SectionLabel>About</SectionLabel>` -> "// ABOUT" */
 export function SectionLabel({
