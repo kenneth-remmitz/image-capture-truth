@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Journey", href: "#journey" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", to: "/journey", hash: "about" },
+  { label: "Journey", to: "/journey", hash: "journey" },
+  { label: "Skills", to: "/journey", hash: "skills" },
+  { label: "Projects", to: "/", hash: "projects" },
+  { label: "Contact", to: "/", hash: "contact" },
 ];
+
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -38,14 +41,16 @@ export function SiteNav() {
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.label}
+              to={l.to}
+              hash={l.hash}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
+
           <Button variant="accent" size="sm" asChild>
             <a href="#cv">Download CV</a>
           </Button>
