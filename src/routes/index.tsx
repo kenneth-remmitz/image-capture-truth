@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Download, FolderGit2, Route as RouteIcon, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/site/section-label";
@@ -30,18 +30,24 @@ export const Route = createFileRoute("/")({
 const previews = [
   {
     label: "About",
+    to: "/journey" as const,
+    hash: "about",
     icon: User,
     title: "Who I am",
     body: "A short story of how I got into software, what I care about, and the way I like to work.",
   },
   {
     label: "Journey",
+    to: "/journey" as const,
+    hash: "journey",
     icon: RouteIcon,
     title: "Studies to shipping",
     body: "A timeline of study, internships, self-driven builds and the skills picked up along the way.",
   },
   {
     label: "Projects",
+    to: "/projects" as const,
+    hash: "work",
     icon: FolderGit2,
     title: "Things I've built",
     body: "Selected work with the problem, the decisions behind it, and what I would do differently next.",
@@ -151,16 +157,16 @@ function Index() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm text-muted-foreground">
-                These sections are coming next — each one gets its own detailed page and layout.
+                Each of these has its own page — jump straight to whichever interests you.
               </p>
             </div>
 
             <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {previews.map(({ label, icon: Icon, title, body }) => (
-                <a
+              {previews.map(({ label, to, hash, icon: Icon, title, body }) => (
+                <Link
                   key={label}
-                  href={`#${label.toLowerCase()}`}
-                  id={label === "About" ? undefined : label.toLowerCase()}
+                  to={to}
+                  hash={hash}
                   className="surface-card-interactive group flex flex-col p-7"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-foreground">
@@ -173,9 +179,9 @@ function Index() {
                   <h3 className="mt-3 text-xl font-semibold">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-accent">
-                    Coming soon <ArrowUpRight className="size-4" />
+                    Explore <ArrowUpRight className="size-4" />
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
