@@ -71,15 +71,17 @@ export function SiteNav() {
         <div className="border-t border-border bg-background md:hidden">
           <div className="container-page flex flex-col gap-1 py-4">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <Link
+                key={l.label}
+                to={l.to}
+                hash={l.hash}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
+
             <Button variant="accent" className="mt-2" asChild>
               <a href="#cv" onClick={() => setOpen(false)}>
                 Download CV
