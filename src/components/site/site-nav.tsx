@@ -8,9 +8,9 @@ const links = [
   { label: "About", to: "/journey", hash: "about" },
   { label: "Journey", to: "/journey", hash: "journey" },
   { label: "Skills", to: "/journey", hash: "skills" },
-  { label: "Projects", to: "/projects", hash: undefined as string | undefined },
+  { label: "Projects", to: "/projects" },
   { label: "Contact", to: "/", hash: "contact" },
-];
+] as const;
 
 
 export function SiteNav() {
@@ -44,7 +44,7 @@ export function SiteNav() {
             <Link
               key={l.label}
               to={l.to}
-              hash={l.hash}
+              {...("hash" in l ? { hash: l.hash } : {})}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
@@ -76,7 +76,7 @@ export function SiteNav() {
               <Link
                 key={l.label}
                 to={l.to}
-                hash={l.hash}
+                {...("hash" in l ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
