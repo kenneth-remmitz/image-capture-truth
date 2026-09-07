@@ -8,7 +8,7 @@ const links = [
   { label: "About", to: "/journey", hash: "about" },
   { label: "Journey", to: "/journey", hash: "journey" },
   { label: "Skills", to: "/journey", hash: "skills" },
-  { label: "Projects", to: "/", hash: "projects" },
+  { label: "Projects", to: "/projects", hash: undefined as string | undefined },
   { label: "Contact", to: "/", hash: "contact" },
 ];
 
@@ -32,12 +32,12 @@ export function SiteNav() {
       )}
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="group flex items-center gap-2.5">
+        <Link to="/" className="group flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent font-mono text-sm font-semibold text-accent-foreground">
             KR
           </span>
           <span className="text-sm font-semibold tracking-tight">Kenneth Remmitz</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -52,7 +52,9 @@ export function SiteNav() {
           ))}
 
           <Button variant="accent" size="sm" asChild>
-            <a href="#cv">Download CV</a>
+            <Link to="/" hash="cv">
+              Download CV
+            </Link>
           </Button>
         </div>
 
@@ -83,9 +85,9 @@ export function SiteNav() {
             ))}
 
             <Button variant="accent" className="mt-2" asChild>
-              <a href="#cv" onClick={() => setOpen(false)}>
+              <Link to="/" hash="cv" onClick={() => setOpen(false)}>
                 Download CV
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
