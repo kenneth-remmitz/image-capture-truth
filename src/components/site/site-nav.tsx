@@ -8,9 +8,9 @@ const links = [
   { label: "About", to: "/journey", hash: "about" },
   { label: "Journey", to: "/journey", hash: "journey" },
   { label: "Skills", to: "/journey", hash: "skills" },
-  { label: "Projects", to: "/", hash: "projects" },
+  { label: "Projects", to: "/projects" },
   { label: "Contact", to: "/", hash: "contact" },
-];
+] as const;
 
 
 export function SiteNav() {
@@ -32,19 +32,19 @@ export function SiteNav() {
       )}
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="group flex items-center gap-2.5">
+        <Link to="/" className="group flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent font-mono text-sm font-semibold text-accent-foreground">
             KR
           </span>
           <span className="text-sm font-semibold tracking-tight">Kenneth Remmitz</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <Link
               key={l.label}
               to={l.to}
-              hash={l.hash}
+              {...("hash" in l ? { hash: l.hash } : {})}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
@@ -52,7 +52,9 @@ export function SiteNav() {
           ))}
 
           <Button variant="accent" size="sm" asChild>
-            <a href="#cv">Download CV</a>
+            <Link to="/" hash="cv">
+              Download CV
+            </Link>
           </Button>
         </div>
 
@@ -71,19 +73,21 @@ export function SiteNav() {
         <div className="border-t border-border bg-background md:hidden">
           <div className="container-page flex flex-col gap-1 py-4">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <Link
+                key={l.label}
+                to={l.to}
+                {...("hash" in l ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
+
             <Button variant="accent" className="mt-2" asChild>
-              <a href="#cv" onClick={() => setOpen(false)}>
+              <Link to="/" hash="cv" onClick={() => setOpen(false)}>
                 Download CV
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
