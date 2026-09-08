@@ -11,12 +11,12 @@ export function ProjectCard({ project }: { project: Project }) {
     <article
       className={
         featured
-          ? "surface-card-interactive flex flex-col p-8 sm:p-10 lg:col-span-2"
-          : "surface-card-interactive flex flex-col p-7"
+          ? "surface-card-interactive flex flex-col py-10 lg:col-span-2 lg:grid lg:grid-cols-[0.7fr_1.3fr] lg:gap-14"
+          : "surface-card-interactive flex flex-col py-8"
       }
     >
       <div className="flex flex-wrap items-center gap-3">
-        <span className="rounded-full bg-accent-soft px-3 py-1 font-mono text-[0.65rem] tracking-widest text-foreground uppercase">
+        <span className="font-mono text-[0.65rem] tracking-widest text-accent uppercase">
           {kind}
         </span>
         <span className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
@@ -24,23 +24,23 @@ export function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <h3 className={featured ? "mt-5 text-3xl font-semibold" : "mt-5 text-xl font-semibold"}>
+      <h3 className={featured ? "mt-6 text-4xl font-normal sm:text-5xl" : "mt-6 text-2xl font-normal"}>
         {name}
       </h3>
-      <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">{summary}</p>
+      <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{summary}</p>
 
       <ul className="mt-6 flex flex-wrap gap-2">
         {technologies.map((t, i) => (
           <li
             key={`${slug}-tech-${i}`}
-            className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground"
+            className="border-b border-border pb-1 text-xs font-medium text-secondary-foreground"
           >
             {t}
           </li>
         ))}
       </ul>
 
-      <div className="mt-8 flex flex-wrap items-center gap-2 pt-0">
+      <div className={featured ? "mt-8 flex flex-wrap items-center gap-2 lg:col-start-2" : "mt-8 flex flex-wrap items-center gap-2"}>
         <Button variant={featured ? "accent" : "outline"} size="sm" asChild>
           <Link to="/projects/$slug" params={{ slug }}>
             Case study <ArrowUpRight />
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {!githubUrl && !liveUrl && (
-        <p className="mt-3 font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
+        <p className="mt-3 font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase lg:col-start-2">
           Links to be added
         </p>
       )}

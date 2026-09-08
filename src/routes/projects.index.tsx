@@ -33,14 +33,13 @@ function ProjectsPage() {
       <SiteNav />
 
       <main>
-        <section className="relative overflow-hidden border-b border-border">
-          <div className="pointer-events-none absolute inset-0 grid-paper [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_65%)]" />
-          <div className="container-page relative section-y">
+        <section className="border-b border-border">
+          <div className="container-page section-y">
             <SectionLabel>Projects</SectionLabel>
-            <h1 className="mt-5 max-w-3xl text-[clamp(2.25rem,5.5vw,3.75rem)] leading-[1.05] font-semibold">
-              Not just a list of names and technologies.
+            <h1 className="editorial-display mt-8 max-w-5xl text-[clamp(3.5rem,9vw,7.5rem)]">
+              Not just a list of <em className="font-normal text-accent">names</em> and technologies.
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-12 max-w-xl border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground md:ml-auto">
               Each project below opens into a fuller write-up: the problem, what I built, the
               challenges, how I worked through them and where it ended up. The content is
               placeholder for now — send me the real detail and I'll fill it in.
@@ -50,7 +49,7 @@ function ProjectsPage() {
 
         <section id="work">
           <div className="container-page section-y">
-            <div className="grid gap-5 lg:grid-cols-2">
+             <div className="grid gap-x-16 gap-y-20 lg:grid-cols-2 [&>article:nth-child(3)]:lg:mt-24">
               {projects.map((p) => (
                 <ProjectCard key={p.slug} project={p} />
               ))}

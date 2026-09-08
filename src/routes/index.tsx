@@ -67,20 +67,21 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 grid-paper [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_70%)]" />
-          <div className="container-page relative section-y">
-            <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-              <div>
+        <section className="overflow-hidden border-b border-border">
+          <div className="container-page section-y">
+            <div className="grid gap-x-10 gap-y-14 lg:grid-cols-12">
+              <div className="lg:col-span-9">
                 <SectionLabel>Introduction</SectionLabel>
-                <h1 className="mt-5 text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold">
+                <h1 className="editorial-display mt-8 text-[clamp(3.6rem,10vw,8.5rem)]">
                   Kenneth Remmitz.
                   <br />
-                  <span className="text-muted-foreground">Graduate software</span>
+                  <span className="font-normal text-accent italic">Graduate software</span>
                   <br />
                   developer.
                 </h1>
-                <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              </div>
+              <div className="flex flex-col justify-end lg:col-span-3 lg:pb-3">
+                <p className="max-w-xl border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground">
                   I build careful, well-structured software for the web — from clean interfaces
                   through to the systems behind them. This is a placeholder for your personal
                   introduction; tell me what you'd like it to say and I'll replace it.
@@ -102,7 +103,8 @@ function Index() {
                   </Button>
                 </div>
 
-                <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-5">
+              </div>
+              <dl className="editorial-rule flex flex-wrap gap-x-10 gap-y-5 pt-6 lg:col-span-7 lg:mt-10">
                   {facts.map((f) => (
                     <div key={f.k}>
                       <dt className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
@@ -111,11 +113,10 @@ function Index() {
                       <dd className="mt-1 text-sm font-medium">{f.v}</dd>
                     </div>
                   ))}
-                </dl>
-              </div>
+              </dl>
 
-              {/* Developer-style card */}
-              <div className="surface-card p-6 sm:p-7">
+              {/* Developer identity as a quiet editorial accent */}
+              <div className="border-t border-accent pt-5 lg:col-span-5 lg:mt-10">
                 <div className="flex items-center gap-2 border-b border-border pb-4">
                   <span className="h-2.5 w-2.5 rounded-full bg-accent" />
                   <span className="h-2.5 w-2.5 rounded-full bg-sand" />
@@ -124,7 +125,7 @@ function Index() {
                     profile.ts
                   </span>
                 </div>
-                <pre className="mt-5 overflow-x-auto font-mono text-[0.8rem] leading-7 text-muted-foreground">
+                <pre className="mt-5 overflow-x-auto font-mono text-[0.72rem] leading-6 text-muted-foreground">
                   <code>{`const kenneth = {
   role: "Graduate Developer",
   learning: ["systems", "craft"],
@@ -132,7 +133,7 @@ function Index() {
   openTo: "junior roles",
 };`}</code>
                 </pre>
-                <div className="mt-6 flex items-center gap-2 rounded-xl bg-secondary px-4 py-3">
+                <div className="mt-5 flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sage opacity-70" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
@@ -147,12 +148,12 @@ function Index() {
         </section>
 
         {/* Preview of what's further down */}
-        <section id="about" className="border-t border-border bg-card/40">
+        <section id="about">
           <div className="container-page section-y">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <SectionLabel>What's below</SectionLabel>
-                <h2 className="mt-4 max-w-lg text-3xl leading-tight font-semibold sm:text-4xl">
+                <h2 className="mt-5 max-w-2xl text-4xl leading-tight font-normal sm:text-6xl">
                   A short tour of the rest of the site.
                 </h2>
               </div>
@@ -161,22 +162,22 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
+            <div className="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-3">
               {previews.map(({ label, to, hash, icon: Icon, title, body }) => (
                 <Link
                   key={label}
                   to={to}
                   hash={hash}
-                  className="surface-card-interactive group flex flex-col p-7"
+                  className="surface-card-interactive group flex flex-col py-8 md:nth-[2]:mt-20"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-foreground">
+                  <span className="flex h-10 w-10 items-center justify-center border border-accent text-accent">
                     <Icon className="size-4" />
                   </span>
                   <span className="label-mono mt-6 block">
                     <span aria-hidden="true">// </span>
                     {label}
                   </span>
-                  <h3 className="mt-3 text-xl font-semibold">{title}</h3>
+                  <h3 className="mt-4 text-2xl font-normal">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-accent">
                     Explore <ArrowUpRight className="size-4" />
@@ -190,10 +191,10 @@ function Index() {
         {/* CV call to action */}
         <section id="cv" className="border-t border-border">
           <div className="container-page section-y">
-            <div className="surface-card flex flex-col items-start gap-6 p-8 sm:p-12 md:flex-row md:items-center md:justify-between">
+            <div className="editorial-rule flex flex-col items-start gap-8 pt-10 md:flex-row md:items-end md:justify-between">
               <div>
                 <SectionLabel>CV</SectionLabel>
-                <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
+                <h2 className="mt-5 text-4xl font-normal sm:text-6xl">
                   Want the one-page version?
                 </h2>
                 <p className="mt-3 max-w-md text-sm text-muted-foreground">

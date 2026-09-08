@@ -15,9 +15,9 @@ export function CredentialCard({ name, provider, date, viewHref, downloadHref }:
   const pending = !viewHref && !downloadHref;
 
   return (
-    <article className="surface-card-interactive flex flex-col p-6">
+    <article className="surface-card-interactive flex flex-col py-7">
       <div className="flex items-start justify-between gap-4">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-foreground">
+        <span className="flex h-10 w-10 items-center justify-center border border-accent text-accent">
           <Award className="size-4" />
         </span>
         <span className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
@@ -25,7 +25,7 @@ export function CredentialCard({ name, provider, date, viewHref, downloadHref }:
         </span>
       </div>
 
-      <h3 className="mt-5 text-lg leading-snug font-semibold">{name}</h3>
+      <h3 className="mt-8 text-2xl leading-snug font-normal">{name}</h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{provider}</p>
 
       <div className="mt-6 flex flex-wrap gap-2">
