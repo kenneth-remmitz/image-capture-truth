@@ -57,8 +57,8 @@ function ProjectDetail() {
               <ArrowLeft className="size-4" /> All projects
             </Link>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <span className="rounded-full bg-accent-soft px-3 py-1 font-mono text-[0.65rem] tracking-widest text-foreground uppercase">
+            <div className="mt-12 flex flex-wrap items-center gap-3">
+              <span className="font-mono text-[0.65rem] tracking-widest text-accent uppercase">
                 {project.kind}
               </span>
               <span className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
@@ -66,10 +66,10 @@ function ProjectDetail() {
               </span>
             </div>
 
-            <h1 className="mt-5 max-w-3xl text-[clamp(2rem,5vw,3.25rem)] leading-[1.06] font-semibold">
+            <h1 className="editorial-display mt-8 max-w-5xl text-[clamp(3.5rem,9vw,7rem)]">
               {project.name}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-10 max-w-2xl border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground md:ml-auto">
               {project.summary}
             </p>
 
@@ -102,23 +102,23 @@ function ProjectDetail() {
 
         <section>
           <div className="container-page section-y">
-            <div className="grid gap-12 lg:grid-cols-[1fr_18rem]">
-              <div className="space-y-10">
+             <div className="grid gap-16 lg:grid-cols-[1fr_20rem]">
+               <div className="space-y-16">
                 {sections.map(([heading, body]) => (
                   <div key={heading}>
                     <SectionLabel>{heading}</SectionLabel>
-                    <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">{body}</p>
+                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">{body}</p>
                   </div>
                 ))}
               </div>
 
-              <aside className="surface-card h-fit p-6">
+               <aside className="surface-card h-fit py-7">
                 <SectionLabel>Technologies</SectionLabel>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {project.technologies.map((t, i) => (
                     <li
                       key={`${project.slug}-t-${i}`}
-                      className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground"
+                       className="border-b border-border pb-1 text-xs font-medium text-secondary-foreground"
                     >
                       {t}
                     </li>

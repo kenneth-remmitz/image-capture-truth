@@ -28,24 +28,22 @@ export function SiteNav() {
     <header
       className={cn(
         "sticky top-0 z-50 border-b transition-colors duration-300",
-        scrolled ? "border-border bg-background/85 backdrop-blur-md" : "border-transparent",
+        scrolled ? "border-border bg-background/95 backdrop-blur-md" : "border-transparent",
       )}
     >
-      <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent font-mono text-sm font-semibold text-accent-foreground">
-            KR
-          </span>
-          <span className="text-sm font-semibold tracking-tight">Kenneth Remmitz</span>
+      <nav className="container-page flex h-20 items-center justify-between md:h-24">
+        <Link to="/" className="group flex items-baseline gap-3">
+          <span className="font-display text-xl font-bold">Kenneth Remmitz</span>
+          <span className="hidden font-mono text-[0.6rem] tracking-widest text-accent uppercase sm:inline">Portfolio / 26</span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
             <Link
               key={l.label}
               to={l.to}
               {...("hash" in l ? { hash: l.hash } : {})}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="font-mono text-[0.65rem] tracking-widest text-muted-foreground uppercase transition-colors hover:text-accent"
             >
               {l.label}
             </Link>
@@ -63,7 +61,7 @@ export function SiteNav() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-foreground md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center border border-border bg-card text-foreground md:hidden"
         >
           {open ? <X className="size-4" /> : <Menu className="size-4" />}
         </button>
@@ -78,7 +76,7 @@ export function SiteNav() {
                 to={l.to}
                 {...("hash" in l ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="border-b border-border px-1 py-4 font-display text-xl text-foreground transition-colors hover:text-accent"
               >
                 {l.label}
               </Link>
