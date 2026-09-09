@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 
 const links = [
   { label: "About", to: "/journey", hash: "about" },
@@ -49,6 +50,7 @@ export function SiteNav() {
             </Link>
           ))}
 
+          <ThemeToggle />
           <Button variant="accent" size="sm" asChild>
             <Link to="/" hash="cv">
               Download CV
@@ -82,6 +84,10 @@ export function SiteNav() {
               </Link>
             ))}
 
+            <div className="mt-3 flex items-center justify-between">
+              <span className="font-mono text-[0.65rem] tracking-widest text-muted-foreground uppercase">Theme</span>
+              <ThemeToggle />
+            </div>
             <Button variant="accent" className="mt-2" asChild>
               <Link to="/" hash="cv" onClick={() => setOpen(false)}>
                 Download CV
