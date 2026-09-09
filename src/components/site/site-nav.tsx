@@ -38,7 +38,7 @@ export function SiteNav() {
           <span className="hidden font-mono text-[0.6rem] tracking-widest text-accent uppercase sm:inline">Portfolio / 26</span>
         </Link>
 
-        <div className="hidden items-center gap-9 md:flex">
+        <div className="hidden items-center gap-9 lg:flex">
           {links.map((l) => (
             <Link
               key={l.label}
@@ -63,14 +63,14 @@ export function SiteNav() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="inline-flex h-10 w-10 items-center justify-center border border-border bg-card text-foreground md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center border border-border bg-card text-foreground lg:hidden"
         >
           {open ? <X className="size-4" /> : <Menu className="size-4" />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background md:hidden">
+        <div className="border-t border-border bg-background lg:hidden">
           <div className="container-page flex flex-col gap-1 py-4">
             {links.map((l) => (
               <Link
