@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Download, FolderGit2, Route as RouteIcon, User } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, FolderGit2, Route as RouteIcon, User, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/site/section-label";
 import { SiteNav } from "@/components/site/site-nav";
@@ -117,6 +117,12 @@ function Index() {
 
               {/* Developer identity as a quiet editorial accent */}
               <div className="border-t border-accent pt-5 lg:col-span-5 lg:mt-10">
+                <div className="flex min-h-48 items-center justify-center bg-secondary sm:min-h-56">
+                  <div className="text-center text-muted-foreground">
+                    <UserRound className="mx-auto size-8" strokeWidth={1.25} />
+                    <span className="mt-4 block font-mono text-[0.65rem] tracking-widest uppercase">Portrait reserved</span>
+                  </div>
+                </div>
                 <div className="flex items-center gap-2 border-b border-border pb-4">
                   <span className="h-2.5 w-2.5 rounded-full bg-accent" />
                   <span className="h-2.5 w-2.5 rounded-full bg-sand" />
