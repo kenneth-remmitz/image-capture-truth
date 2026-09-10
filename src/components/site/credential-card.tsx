@@ -1,17 +1,27 @@
-import { Download, Eye } from "lucide-react";
+import { Award, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Award } from "lucide-react";
 
 export type Credential = {
   name: string;
   provider: string;
-  date: string;
+  date?: string;
+  /** Optional short description of the document. */
+  description?: string;
   viewHref?: string;
   downloadHref?: string;
 };
 
-/** Reusable credential / certificate card. Documents can stay placeholders for now. */
-export function CredentialCard({ name, provider, date, viewHref, downloadHref }: Credential) {
+export type CredentialDoc = Credential;
+
+/** Reusable credential / document card. Documents can stay placeholders for now. */
+export function CredentialCard({
+  name,
+  provider,
+  date,
+  description,
+  viewHref,
+  downloadHref,
+}: Credential) {
   const pending = !viewHref && !downloadHref;
 
   return (
@@ -20,13 +30,18 @@ export function CredentialCard({ name, provider, date, viewHref, downloadHref }:
         <span className="flex h-10 w-10 items-center justify-center border border-accent text-accent">
           <Award className="size-4" />
         </span>
-        <span className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
-          {date}
-        </span>
+        {date && (
+          <span className="font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
+            {date}
+          </span>
+        )}
       </div>
 
       <h3 className="mt-8 text-2xl leading-snug font-normal">{name}</h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{provider}</p>
+      {description && (
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{description}</p>
+      )}
 
       <div className="mt-6 flex flex-wrap gap-2">
         <Button variant="outline" size="sm" asChild={!!viewHref} disabled={!viewHref}>
