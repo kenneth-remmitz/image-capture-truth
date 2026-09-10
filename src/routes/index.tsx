@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/site/section-label";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/site/site-footer";
+import { ContactSection } from "@/components/site/contact-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -213,6 +214,7 @@ function Index() {
             </div>
           </div>
         </section>
+        <ContactSection />
       </main>
 
       <SiteFooter />

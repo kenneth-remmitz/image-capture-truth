@@ -279,7 +279,7 @@ function JourneyPage() {
               <div>
                 <SectionLabel>Credentials</SectionLabel>
                 <h2 className="mt-4 max-w-lg text-3xl leading-tight font-semibold sm:text-4xl">
-                  Certifications and credentials.
+                  Certifications and documents.
                 </h2>
               </div>
               <p className="max-w-sm text-sm text-muted-foreground">
