@@ -13,6 +13,7 @@ import { SectionLabel } from "@/components/site/section-label";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/site/site-footer";
 import { CredentialCard, type Credential } from "@/components/site/credential-card";
+import { credentialDocs } from "@/data/credentials";
 
 export const Route = createFileRoute("/journey")({
   head: () => ({
@@ -120,11 +121,7 @@ const education = [
   },
 ];
 
-const credentials: Credential[] = [
-  { name: "Google AI Essentials", provider: "Google", date: "Year TBC" },
-  { name: "Certificate name placeholder", provider: "Provider placeholder", date: "Year TBC" },
-  { name: "Certificate name placeholder", provider: "Provider placeholder", date: "Year TBC" },
-];
+const credentials: Credential[] = credentialDocs;
 
 function JourneyPage() {
   return (
@@ -282,7 +279,7 @@ function JourneyPage() {
               <div>
                 <SectionLabel>Credentials</SectionLabel>
                 <h2 className="mt-4 max-w-lg text-3xl leading-tight font-semibold sm:text-4xl">
-                  Certifications and credentials.
+                  Certifications and documents.
                 </h2>
               </div>
               <p className="max-w-sm text-sm text-muted-foreground">

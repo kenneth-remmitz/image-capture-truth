@@ -9,3 +9,4 @@
 - [x] Verify both themes on desktop, tablet and mobile
 - [ ] Replace placeholder wording with real content (intro, dates, skills, education, credentials, project detail)
 - [ ] Add real CV file, certificate documents and project links
+- [x] Credentials/documents section, contact section and refined footer
