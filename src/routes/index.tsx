@@ -56,9 +56,9 @@ const previews = [
 ];
 
 const facts = [
-  { k: "Focus", v: "Full-stack web" },
-  { k: "Stack", v: "TypeScript · React · Python" },
-  { k: "Based", v: "Johannesburg, SA" },
+  { k: "Focus", v: "Web development & databases" },
+  { k: "Stack", v: "C# · Java · JavaScript · SQL" },
+  { k: "Based", v: "Cape Town, South Africa" },
 ];
 
 function Index() {
@@ -83,9 +83,11 @@ function Index() {
               </div>
               <div className="flex flex-col justify-end lg:col-span-3 lg:pb-3">
                 <p className="max-w-xl border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground">
-                  I build careful, well-structured software for the web — from clean interfaces
-                  through to the systems behind them. This is a placeholder for your personal
-                  introduction; tell me what you'd like it to say and I'll replace it.
+                  I like turning ideas into things that actually work — whether that’s a web
+                  experience, a software tool, or something in between. I’m especially interested
+                  in web development, databases, C# and Python, and I enjoy experimenting with
+                  tools that make the development process smarter without losing sight of what’s
+                  happening behind the screen.
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-3">
@@ -205,11 +207,18 @@ function Index() {
                   Want the one-page version?
                 </h2>
                 <p className="mt-3 max-w-md text-sm text-muted-foreground">
-                  Send me your CV file and I'll wire this button up to download it.
+                  A concise overview of my education, technical skills, experience and
+                  software-development projects.
                 </p>
               </div>
-              <Button variant="accent" size="lg">
-                <Download /> Download CV
+              <Button variant="accent" size="lg" asChild>
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1fFCHFDHpbnKL43vnaQcIymUUbMqX3tmX"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Download /> Download CV
+                </a>
               </Button>
             </div>
           </div>

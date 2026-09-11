@@ -8,11 +8,20 @@ type Channel = {
   icon: typeof Mail;
 };
 
-/** Placeholder details — real addresses and profile links to be supplied. */
 const channels: Channel[] = [
-  { label: "Email", value: "Email address to be added", icon: Mail },
-  { label: "GitHub", value: "GitHub profile to be added", icon: Github },
-  { label: "LinkedIn", value: "LinkedIn profile to be added", icon: Linkedin },
+  { label: "Email", value: "kmremmitz@gmail.com", href: "mailto:kmremmitz@gmail.com", icon: Mail },
+  {
+    label: "GitHub",
+    value: "github.com/kenneth-remmitz",
+    href: "https://github.com/kenneth-remmitz",
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/kenneth-remmitz",
+    href: "https://www.linkedin.com/in/kenneth-remmitz-06687b289/",
+    icon: Linkedin,
+  },
 ];
 
 export function ContactSection() {
@@ -26,8 +35,8 @@ export function ContactSection() {
               Let’s talk.
             </h2>
             <p className="mt-6 max-w-md border-l border-border pl-6 leading-relaxed text-muted-foreground">
-              The quickest way to reach me is by email. Send me your real address and profile
-              links and I’ll make each of these live.
+              Whether it’s a graduate opportunity, a project, or simply a conversation about
+              software and technology, feel free to reach out.
             </p>
           </div>
 

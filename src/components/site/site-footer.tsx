@@ -44,7 +44,7 @@ export function SiteFooter() {
             Kenneth Remmitz — Graduate Software Developer
           </p>
           <p className="text-sm text-muted-foreground">
-            Built and maintained by hand. © {new Date().getFullYear()}
+            Designed &amp; developed by Kenneth Remmitz. © {new Date().getFullYear()}
           </p>
         </div>
       </div>
