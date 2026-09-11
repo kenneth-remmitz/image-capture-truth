@@ -9,11 +9,13 @@ export type Credential = {
   description?: string;
   viewHref?: string;
   downloadHref?: string;
+  /** Optional status shown when the document is intentionally not linked. */
+  status?: string;
 };
 
 export type CredentialDoc = Credential;
 
-/** Reusable credential / document card. Documents can stay placeholders for now. */
+/** Reusable credential / document card. */
 export function CredentialCard({
   name,
   provider,
@@ -21,6 +23,7 @@ export function CredentialCard({
   description,
   viewHref,
   downloadHref,
+  status,
 }: Credential) {
   const pending = !viewHref && !downloadHref;
 
@@ -70,7 +73,7 @@ export function CredentialCard({
 
       {pending && (
         <p className="mt-3 font-mono text-[0.7rem] tracking-widest text-muted-foreground uppercase">
-          Document to be added
+          {status ?? "Document to be added"}
         </p>
       )}
     </article>

@@ -1,36 +1,44 @@
 import type { CredentialDoc } from "@/components/site/credential-card";
 
-/**
- * Placeholder document list. Real files, dates and institutions must be supplied
- * by Kenneth — nothing here should be presented as a factual achievement.
- */
+const driveView = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+const driveDownload = (id: string) => `https://drive.google.com/uc?export=download&id=${id}`;
+
+const CV_ID = "1fFCHFDHpbnKL43vnaQcIymUUbMqX3tmX";
+const DIPLOMA_ID = "1L3Fbh1u31l48-LHIEni4OtvbNh3iymPd";
+const AI_ESSENTIALS_ID = "1Kkq3H3xKkCbm8Tc5XD-pJ1PVsJ9Ac4aM";
+
 export const credentialDocs: CredentialDoc[] = [
   {
-    name: "Curriculum Vitae",
+    name: "Kenneth Remmitz — CV",
     provider: "Kenneth Remmitz",
-    date: "Latest version",
     description:
-      "A one-page summary of experience, skills and education. The file has not been supplied yet.",
+      "A concise overview of my education, technical skills, experience and software-development projects.",
+    viewHref: driveView(CV_ID),
+    downloadHref: driveDownload(CV_ID),
   },
   {
-    name: "Diploma in IT / Software Development",
-    provider: "Institution to be confirmed",
-    date: "Year TBC",
+    name: "Diploma in Information Technology in Software Development",
+    provider: "IIE Rosebank College",
+    date: "2023 – 2025",
     description:
-      "The formal software development qualification. Certificate document to be added.",
+      "My formal qualification in Information Technology in Software Development, completed after three years of study from 2023 to 2025.",
+    viewHref: driveView(DIPLOMA_ID),
+    downloadHref: driveDownload(DIPLOMA_ID),
   },
   {
-    name: "Google AI Essentials Certificate",
-    provider: "Google",
-    date: "Year TBC",
+    name: "Google AI Essentials",
+    provider: "Google / Coursera",
+    date: "12 August 2026",
     description:
-      "Foundational certificate covering practical use of AI tools. Certificate document to be added.",
+      "A five-course specialization developed by Google covering practical AI use, productivity, prompting, responsible AI and adapting to developments in AI.",
+    viewHref: driveView(AI_ESSENTIALS_ID),
+    downloadHref: driveDownload(AI_ESSENTIALS_ID),
   },
   {
     name: "Academic Transcript",
-    provider: "Institution to be confirmed",
-    date: "Year TBC",
+    provider: "IIE Rosebank College",
     description:
-      "Official record of completed modules. Document to be added — no marks are shown until then.",
+      "My academic results across the modules completed during my Diploma in Information Technology in Software Development.",
+    status: "Available on request",
   },
 ];
