@@ -41,8 +41,7 @@ function ProjectsPage() {
             </h1>
             <p className="mt-12 max-w-xl border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground md:ml-auto">
               Each project below opens into a fuller write-up: the problem, what I built, the
-              challenges, how I worked through them and where it ended up. The content is
-              placeholder for now — send me the real detail and I'll fill it in.
+              challenges, how I worked through them and where it ended up.
             </p>
           </div>
         </section>
