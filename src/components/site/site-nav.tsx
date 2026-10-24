@@ -52,9 +52,13 @@ export function SiteNav() {
 
           <ThemeToggle />
           <Button variant="accent" size="sm" asChild>
-            <Link to="/" hash="cv">
+            <a
+              href="https://drive.google.com/uc?export=download&id=1fFCHFDHpbnKL43vnaQcIymUUbMqX3tmX"
+              target="_blank"
+              rel="noreferrer"
+            >
               Download CV
-            </Link>
+            </a>
           </Button>
         </div>
 
@@ -88,10 +92,15 @@ export function SiteNav() {
               <span className="font-mono text-[0.65rem] tracking-widest text-muted-foreground uppercase">Theme</span>
               <ThemeToggle />
             </div>
-            <Button variant="accent" className="mt-2" asChild>
-              <Link to="/" hash="cv" onClick={() => setOpen(false)}>
+            <Button variant="accent" className="mt-2 w-full" asChild>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1fFCHFDHpbnKL43vnaQcIymUUbMqX3tmX"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+              >
                 Download CV
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

@@ -92,12 +92,12 @@ function Index() {
 
                 <div className="mt-9 flex flex-wrap gap-3">
                   <Button variant="accent" size="lg" asChild>
-                    <a href="#projects">
+                    <Link to="/projects">
                       View projects <ArrowRight />
-                    </a>
+                    </Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <a href="#journey">My journey</a>
+                    <Link to="/journey">My journey</Link>
                   </Button>
                   <Button variant="ghost" size="lg" asChild>
                     <a href="#cv">
