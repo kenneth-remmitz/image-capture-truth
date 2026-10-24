@@ -7,6 +7,7 @@ import {
   Layers,
   Rocket,
   Sparkles,
+  Users,
   Wrench,
 } from "lucide-react";
 import { SectionLabel } from "@/components/site/section-label";
@@ -39,85 +40,80 @@ export const Route = createFileRoute("/journey")({
 
 const milestones = [
   {
-    period: "Placeholder date",
-    title: "Started studying software development",
+    period: "2023",
+    title: "Started my Software Development Diploma",
     icon: BookOpen,
-    body: "Where the foundations were laid — programming fundamentals, problem solving and the first taste of building something that runs. Replace this with your own words.",
+    body: "Began studying Information Technology in Software Development at IIE Rosebank College in Cape Town, building my foundation in programming, databases, web development and application development.",
   },
   {
-    period: "Placeholder date",
-    title: "Learning different programming technologies",
-    icon: Braces,
-    body: "Broadening out from a single language into several — languages, frameworks, databases and tooling. Add the specifics you'd like highlighted here.",
+    period: "April 2025 – November 2025",
+    title: "Became a Tutor",
+    icon: Users,
+    body: "I was offered a tutoring role through Rosebank College, where I helped first-year students work through Java, C# and SQL fundamentals. Teaching other students strengthened my own understanding and taught me how to explain technical problems in different ways.",
   },
   {
-    period: "Placeholder date",
-    title: "Academic and personal projects",
-    icon: Code2,
-    body: "Turning coursework into real, working software, and starting side projects driven purely by curiosity. Project details to be added.",
-  },
-  {
-    period: "Placeholder date",
-    title: "Graduated",
+    period: "2025",
+    title: "Completed my Diploma",
     icon: GraduationCap,
-    body: "Completed the qualification and stepped out of study mode with a much clearer sense of the kind of engineer I want to be. Exact qualification and date to be confirmed.",
+    body: "Completed my Diploma in Information Technology in Software Development, marking the end of my formal studies and the beginning of the next stage — applying what I had learned to projects beyond the classroom.",
   },
   {
-    period: "Placeholder date",
-    title: "Google AI Essentials certification",
-    icon: Sparkles,
-    body: "Formal grounding in how AI tools work and where they genuinely help. Add your own reflection on what this changed for you.",
-  },
-  {
-    period: "Ongoing",
-    title: "An interest in AI-assisted development",
+    period: "2026",
+    title: "CAPACITI AI Acceleration Programme",
     icon: Wrench,
-    body: "Exploring how AI fits into a real development workflow — as an accelerator for the work, not a replacement for understanding it.",
+    body: "Completed a one-week AI Acceleration Programme with CAPACITI, gaining practical exposure to AI tools and workflows and exploring how they can support modern software-development work.",
+  },
+  {
+    period: "12 August 2026",
+    title: "Google AI Essentials",
+    icon: Sparkles,
+    body: "Completed the Google AI Essentials specialization, developed by Google and delivered through Coursera, further developing my understanding of productive and responsible AI use.",
   },
   {
     period: "Now",
-    title: "Building more ambitious personal software",
+    title: "Building and sharpening my craft",
     icon: Rocket,
-    body: "Larger, longer-lived projects with real architecture behind them. This is where the journey is heading next.",
+    body: "I'm currently focused on projects that strengthen my web-development, database, software-engineering and AI-assisted development skills while looking for the opportunity to take those skills into a professional environment.",
   },
 ];
 
 const skillGroups = [
   {
-    label: "Languages",
+    label: "Programming Languages",
     icon: Braces,
-    items: ["Placeholder", "Placeholder", "Placeholder"],
+    items: ["C#", "Java", "JavaScript", "Kotlin", "Python — currently learning"],
   },
   {
-    label: "Frameworks & libraries",
+    label: "Web Development",
+    icon: Code2,
+    items: ["HTML/CSS"],
+  },
+  {
+    label: "Databases",
     icon: Layers,
-    items: ["Placeholder", "Placeholder", "Placeholder"],
+    items: ["SQL", "MySQL"],
   },
   {
-    label: "Data & storage",
-    icon: BookOpen,
-    items: ["Placeholder", "Placeholder"],
-  },
-  {
-    label: "Tools & workflow",
+    label: "Tools & Platforms",
     icon: Wrench,
-    items: ["Placeholder", "Placeholder", "Placeholder"],
+    items: [
+      "Visual Studio",
+      "Visual Studio Code",
+      "Git",
+      "SQL Server Management Studio",
+      "Android Studio",
+      "Figma",
+    ],
   },
 ];
 
 const education = [
   {
-    qualification: "Software development qualification (placeholder)",
-    institution: "Institution to be confirmed",
-    period: "Year – Year",
+    qualification: "Diploma in Information Technology in Software Development",
+    institution: "IIE Rosebank College — Cape Town",
+    period: "2023–2025 · Completed",
     detail:
-      "A short summary of the course focus, notable modules and anything you'd like to call out. Replace with real detail.",
-  },
-  {
-    qualification: "Secondary education (placeholder)",
-    institution: "Institution to be confirmed",
-    period: "Year",
-    detail: "Optional — remove this entry if you'd rather not include it.",
+      "A three-year software development qualification covering programming, web development, databases, application development, system analysis, human-computer interaction, software quality and testing, information security and related software-development principles.",
   },
 ];
 
@@ -139,15 +135,31 @@ function JourneyPage() {
                 <h1 className="mt-5 max-w-2xl text-[clamp(2.25rem,5.5vw,3.75rem)] leading-[1.05] font-semibold">
                   The short version of how I got here.
                 </h1>
-                <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                  Placeholder introduction. A few sentences about who you are, what drew you to
-                  software, and the kind of problems you enjoy working on. Send me the wording and
-                  I'll put it in.
-                </p>
-                <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">
-                  A second placeholder paragraph for how you like to work — the habits, the
-                  standards you hold yourself to, and where you want to grow next.
-                </p>
+                <div className="mt-7 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground">
+                  <p>
+                    I'm a Software Development graduate from IIE Rosebank College in Cape Town,
+                    with a strong interest in web development, databases and building practical
+                    software that people can actually use.
+                  </p>
+                  <p>
+                    I enjoy taking an idea from a rough concept to something structured, functional
+                    and visually considered. Web development is one of the areas I enjoy most, but
+                    I'm also continuing to grow my skills in C#, Python, database management and
+                    the broader software-development process.
+                  </p>
+                </div>
+                <div className="mt-4 max-w-xl space-y-4 leading-relaxed text-muted-foreground">
+                  <p>
+                    During my studies, I was offered a tutoring role through my campus, where I
+                    helped first-year students work through Java, C# and SQL fundamentals. That
+                    experience strengthened both my technical understanding and my ability to
+                    explain problems in a way that makes sense to different people.
+                  </p>
+                  <p>
+                    Outside of development, I enjoy getting outdoors when I can — hiking, swimming
+                    and anything that gets me away from a screen for a while.
+                  </p>
+                </div>
               </div>
 
               <aside className="surface-card h-fit p-7">
@@ -155,7 +167,7 @@ function JourneyPage() {
                 <dl className="mt-6 space-y-5">
                   {[
                     ["Currently", "Graduate software developer"],
-                    ["Studying", "Software development"],
+                    ["Completed", "Diploma in IT in Software Development"],
                     ["Exploring", "AI-assisted development"],
                     ["Next", "First developer role"],
                   ].map(([k, v]) => (
@@ -245,7 +257,8 @@ function JourneyPage() {
                 What I reach for, grouped by how I actually use it.
               </h2>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                Placeholder list — send me the technologies you want shown and I'll fill these in.
+                The technologies I've worked with across my studies, tutoring and personal
+                projects — grouped by how I use them.
               </p>
             </div>
 
@@ -283,8 +296,8 @@ function JourneyPage() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm text-muted-foreground">
-                View and download buttons are ready — they'll activate once you send me the
-                documents.
+                Explore my qualifications and supporting documents. My academic transcript is
+                available on request.
               </p>
             </div>
 
