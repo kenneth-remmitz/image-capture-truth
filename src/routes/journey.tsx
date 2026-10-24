@@ -7,6 +7,7 @@ import {
   Layers,
   Rocket,
   Sparkles,
+  Users,
   Wrench,
 } from "lucide-react";
 import { SectionLabel } from "@/components/site/section-label";
@@ -256,7 +257,8 @@ function JourneyPage() {
                 What I reach for, grouped by how I actually use it.
               </h2>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                Placeholder list — send me the technologies you want shown and I'll fill these in.
+                The technologies I've worked with across my studies, tutoring and personal
+                projects — grouped by how I use them.
               </p>
             </div>
 
@@ -294,8 +296,8 @@ function JourneyPage() {
                 </h2>
               </div>
               <p className="max-w-sm text-sm text-muted-foreground">
-                View and download buttons are ready — they'll activate once you send me the
-                documents.
+                Explore my qualifications and supporting documents. My academic transcript is
+                available on request.
               </p>
             </div>
 
