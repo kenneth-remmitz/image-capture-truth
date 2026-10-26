@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 
-/** Small developer-style label, e.g. `<SectionLabel>About</SectionLabel>` -> "// ABOUT" */
+/** Small developer-style label, e.g. `<SectionLabel>About</SectionLabel>` -> "ABOUT" */
 export function SectionLabel({
   children,
   className,
@@ -10,10 +10,5 @@ export function SectionLabel({
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <span className={cn("label-mono inline-block", className)}>
-      <span aria-hidden="true">// </span>
-      {children}
-    </span>
-  );
+  return <span className={cn("label-mono inline-block", className)}>{children}</span>;
 }

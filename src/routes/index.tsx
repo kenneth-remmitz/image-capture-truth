@@ -182,10 +182,7 @@ function Index() {
                   <span className="flex h-10 w-10 items-center justify-center border border-accent text-accent">
                     <Icon className="size-4" />
                   </span>
-                  <span className="label-mono mt-6 block">
-                    <span aria-hidden="true">// </span>
-                    {label}
-                  </span>
+                  <span className="label-mono mt-6 block">{label}</span>
                   <h3 className="mt-4 text-2xl font-normal">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-accent">
