@@ -10,10 +10,5 @@ export function SectionLabel({
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <span className={cn("label-mono inline-block", className)}>
-      <span aria-hidden="true">// </span>
-      {children}
-    </span>
-  );
+  return <span className={cn("label-mono inline-block", className)}>{children}</span>;
 }
