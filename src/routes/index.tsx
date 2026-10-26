@@ -76,9 +76,9 @@ function Index() {
                 <h1 className="editorial-display mt-8 text-[clamp(3.6rem,10vw,8.5rem)]">
                   Kenneth Remmitz.
                   <br />
-                  <span className="font-normal text-accent italic">Graduate software</span>
+                  <span className="font-normal text-accent italic">Software Developer</span>
                   <br />
-                  developer.
+                  Graduate
                 </h1>
               </div>
               <div className="flex flex-col justify-end lg:col-span-3 lg:pb-3">
