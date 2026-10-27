@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Download, FolderGit2, Route as RouteIcon, User, UserRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, FolderGit2, Route as RouteIcon, User } from "lucide-react";
+import portraitAsset from "@/assets/kenneth-portrait.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/site/section-label";
 import { SiteNav } from "@/components/site/site-nav";
@@ -9,13 +10,13 @@ import { ContactSection } from "@/components/site/contact-section";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kenneth Remmitz — Graduate Software Developer" },
+      { title: "Kenneth Remmitz — Software Developer Graduate" },
       {
         name: "description",
         content:
           "Portfolio of Kenneth Remmitz, a graduate software developer building thoughtful, well-crafted web software. See the journey, projects and CV.",
       },
-      { property: "og:title", content: "Kenneth Remmitz — Graduate Software Developer" },
+      { property: "og:title", content: "Kenneth Remmitz — Software Developer Graduate" },
       {
         property: "og:description",
         content:
@@ -120,11 +121,12 @@ function Index() {
 
               {/* Developer identity as a quiet editorial accent */}
               <div className="border-t border-accent pt-5 lg:col-span-5 lg:mt-10">
-                <div className="flex min-h-48 items-center justify-center bg-secondary sm:min-h-56">
-                  <div className="text-center text-muted-foreground">
-                    <UserRound className="mx-auto size-8" strokeWidth={1.25} />
-                    <span className="mt-4 block font-mono text-[0.65rem] tracking-widest uppercase">Portrait reserved</span>
-                  </div>
+                <div className="overflow-hidden bg-secondary">
+                  <img
+                    src={portraitAsset.url}
+                    alt="Portrait of Kenneth Remmitz, Software Developer Graduate"
+                    className="w-full object-cover"
+                  />
                 </div>
                 <div className="flex items-center gap-2 border-b border-border pb-4">
                   <span className="h-2.5 w-2.5 rounded-full bg-accent" />
