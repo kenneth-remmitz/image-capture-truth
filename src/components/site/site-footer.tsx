@@ -41,7 +41,7 @@ export function SiteFooter() {
 
         <div className="editorial-rule mt-14 flex flex-col gap-2 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[0.65rem] tracking-widest text-muted-foreground uppercase">
-            Kenneth Remmitz — Graduate Software Developer
+            Kenneth Remmitz — Software Developer Graduate
           </p>
           <p className="text-sm text-muted-foreground">
             Designed &amp; developed by Kenneth Remmitz. © {new Date().getFullYear()}
