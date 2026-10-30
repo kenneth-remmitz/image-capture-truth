@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HubRouteImport } from './routes/hub'
+import { Route as HubLoginRouteImport } from './routes/hub-login'
 import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as ApiHubArgonRouteImport } from './routes/api/hub-argon'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
@@ -19,9 +22,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HubRoute = HubRouteImport.update({
+  id: '/hub',
+  path: '/hub',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HubLoginRoute = HubLoginRouteImport.update({
+  id: '/hub-login',
+  path: '/hub-login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JourneyRoute = JourneyRouteImport.update({
   id: '/journey',
   path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiHubArgonRoute = ApiHubArgonRouteImport.update({
+  id: '/api/hub-argon',
+  path: '/api/hub-argon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
@@ -37,34 +55,68 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hub': typeof HubRoute
+  '/hub-login': typeof HubLoginRoute
   '/journey': typeof JourneyRoute
+  '/api/hub-argon': typeof ApiHubArgonRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hub': typeof HubRoute
+  '/hub-login': typeof HubLoginRoute
   '/journey': typeof JourneyRoute
+  '/api/hub-argon': typeof ApiHubArgonRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects': typeof ProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hub': typeof HubRoute
+  '/hub-login': typeof HubLoginRoute
   '/journey': typeof JourneyRoute
+  '/api/hub-argon': typeof ApiHubArgonRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/journey' | '/projects/$slug' | '/projects/'
+  fullPaths:
+    | '/'
+    | '/hub'
+    | '/hub-login'
+    | '/journey'
+    | '/api/hub-argon'
+    | '/projects/$slug'
+    | '/projects/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/journey' | '/projects/$slug' | '/projects'
-  id: '__root__' | '/' | '/journey' | '/projects/$slug' | '/projects/'
+  to:
+    | '/'
+    | '/hub'
+    | '/hub-login'
+    | '/journey'
+    | '/api/hub-argon'
+    | '/projects/$slug'
+    | '/projects'
+  id:
+    | '__root__'
+    | '/'
+    | '/hub'
+    | '/hub-login'
+    | '/journey'
+    | '/api/hub-argon'
+    | '/projects/$slug'
+    | '/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HubRoute: typeof HubRoute
+  HubLoginRoute: typeof HubLoginRoute
   JourneyRoute: typeof JourneyRoute
+  ApiHubArgonRoute: typeof ApiHubArgonRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
@@ -78,11 +130,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hub': {
+      id: '/hub'
+      path: '/hub'
+      fullPath: '/hub'
+      preLoaderRoute: typeof HubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hub-login': {
+      id: '/hub-login'
+      path: '/hub-login'
+      fullPath: '/hub-login'
+      preLoaderRoute: typeof HubLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journey': {
       id: '/journey'
       path: '/journey'
       fullPath: '/journey'
       preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/hub-argon': {
+      id: '/api/hub-argon'
+      path: '/api/hub-argon'
+      fullPath: '/api/hub-argon'
+      preLoaderRoute: typeof ApiHubArgonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/': {
@@ -104,7 +177,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HubRoute: HubRoute,
+  HubLoginRoute: HubLoginRoute,
   JourneyRoute: JourneyRoute,
+  ApiHubArgonRoute: ApiHubArgonRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
