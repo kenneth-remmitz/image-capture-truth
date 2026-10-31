@@ -82,9 +82,16 @@ export function ArgonChat({ userId }: { userId: string }) {
         prev.map((m) => (m.id === optimisticId ? (userRow as HubMessage) : m)),
       );
 
+      const { data: sessionData } = await supabase.auth.getSession();
+      const accessToken = sessionData.session?.access_token;
+      if (!accessToken) throw new Error("Session expired. Sign in again.");
+
       const res = await fetch("/api/hub-argon", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
         body: JSON.stringify({ prompt, history }),
       });
       const payload = (await res.json().catch(() => null)) as
