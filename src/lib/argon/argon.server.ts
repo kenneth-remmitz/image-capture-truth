@@ -81,7 +81,7 @@ export async function runArgon({
     model: provider(ARGON_MODEL),
     system: ARGON_SYSTEM,
     messages,
-    abortSignal,
+    ...(abortSignal ? { abortSignal } : {}),
   });
 
   const reply = await result.text;
